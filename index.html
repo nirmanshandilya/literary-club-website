@@ -1,0 +1,908 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ============================================================
+       SITE META — Change these for your college
+       ============================================================ -->
+    <title>Literary Club - GEC Palamu</title>
+    <meta
+      name="description"
+      content="The literary club of Government Engineering College Palamu — where words find their home."
+    />
+
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📖</text></svg>"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- ============================================================
+     LOADING SCREEN — Book Flip Animation
+     ============================================================ -->
+    <div id="loader" role="status" aria-label="Loading">
+      <div class="loader-book" aria-hidden="true">
+        <div class="book-cover"></div>
+        <div class="book-spine"></div>
+        <div class="page page-1"></div>
+        <div class="page page-2"></div>
+        <div class="page page-3"></div>
+      </div>
+      <p class="loader-text">
+        Opening the pages
+        <span class="loader-dots">
+          <span></span><span></span><span></span>
+        </span>
+      </p>
+    </div>
+
+    <!-- ============================================================
+     LIGHTBOX (for gallery)
+     ============================================================ -->
+    <div
+      id="lightbox"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Image viewer"
+    >
+      <span
+        id="lightbox-close"
+        class="lightbox-close"
+        role="button"
+        aria-label="Close"
+        >&times;</span
+      >
+      <img id="lightbox-img" src="" alt="Gallery image" />
+    </div>
+
+    <!-- ============================================================
+     MOBILE MENU OVERLAY
+     ============================================================ -->
+    <div class="menu-overlay" id="menu-overlay"></div>
+    <nav id="mobile-menu" aria-label="Mobile navigation">
+      <a href="#purpose">About Us</a>
+      <a href="#thought">President's Message</a>
+      <a href="#events-upcoming">Events</a>
+      <a href="#featured">Writings</a>
+      <a href="#magazine">Magazine</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#events-past">Archive</a>
+      <a href="#submit">Submit Work</a>
+    </nav>
+
+    <!-- ============================================================
+     NAVBAR
+     ============================================================ -->
+    <header id="navbar" role="banner">
+      <a href="#" class="nav-logo">
+        <!--
+      🔧 LOGO: Replace the SVG below with your own logo image like this:
+      <img src="assets/images/logo.png" alt="Literary Club Logo" class="nav-logo-img" />
+
+      OR keep the default SVG book icon as-is.
+    -->
+        <span class="nav-logo-icon nav-logo-img" aria-hidden="true">
+          <img src="images/litc-logo.png"
+        </span>
+        <span class="nav-logo-text"><em>LitC</em></span>
+      </a>
+
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#purpose">About</a>
+        <a href="#events-upcoming">Events</a>
+        <a href="#featured">Writings</a>
+        <a href="#magazine">Magazine</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#submit" class="nav-submit-btn">Submit Work</a>
+      </nav>
+
+      <button
+        class="nav-hamburger"
+        id="hamburger"
+        aria-label="Open menu"
+        aria-expanded="false"
+      >
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+
+    <!-- ============================================================
+     SECTION 1: HERO
+     🔧 EDIT: Club name, tagline, college name
+     ============================================================ -->
+    <section id="hero">
+      <span class="hero-ornament top-left" aria-hidden="true">❧</span>
+      <span class="hero-ornament top-right" aria-hidden="true">❧</span>
+
+      <div class="hero-content">
+        <span class="hero-badge">Government Engineering College Palamu's </span>
+
+        <h1 class="hero-title">Literary Club</h1>
+        <p class="hero-subtitle">
+          Where every word is a world waiting to be discovered
+        </p>
+
+        <div class="hero-divider" aria-hidden="true"></div>
+
+        <div class="hero-cta-group">
+          <a href="#featured" class="btn-primary">Read Our Works</a>
+          <a href="#submit" class="btn-outline">Submit Your Writing</a>
+        </div>
+      </div>
+
+      <div class="hero-scroll" aria-hidden="true">
+        <span>Scroll</span>
+        <div class="scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+     SECTION 2: PURPOSE OF THE CLUB
+     🔧 EDIT: Description, pillars
+     ============================================================ -->
+    <section id="purpose">
+      <div class="purpose-grid">
+        <div class="purpose-text reveal-left">
+          <div
+            class="section-header"
+            style="text-align: left; margin-bottom: 36px"
+          >
+            <span class="section-tag">Who We Are</span>
+            <h2 class="section-title">
+              A Space for <em>Words</em><br />to Take Flight
+            </h2>
+            <div class="section-rule" style="margin-left: 0"></div>
+          </div>
+
+          <!-- 🔧 EDIT: Your club's description -->
+          <span class="highlight"
+            >"Literature is not just an art — it is the mirror of
+            civilization."</span
+          >
+          <p>
+            The Literary Club of Government Engineering College Palamu, founded in 2024
+            with a singular belief: that every student carries a story worth
+            telling. We are a community of readers, writers, poets,
+            storytellers, and dreamers.
+          </p>
+          <p>
+            From intimate poetry evenings to college-wide literary festivals, we
+            create spaces where voices — however quiet — are heard, celebrated,
+            and preserved.
+          </p>
+          <p>
+            Whether you write for yourself or for the world, there is a chair
+            for you at our table.
+          </p>
+        </div>
+
+        <div class="purpose-pillars reveal-right">
+          <!-- 🔧 EDIT: Add or change your club's core values/activities -->
+          <div class="pillar">
+            <span class="pillar-icon">✒️</span>
+            <div>
+              <h3>Creative Writing</h3>
+              <p>
+                Workshops, writing sprints, and mentorship sessions for fiction,
+                poetry, essays, and beyond.
+              </p>
+            </div>
+          </div>
+          <div class="pillar">
+            <span class="pillar-icon">📚</span>
+            <div>
+              <h3>Reading Culture</h3>
+              <p>
+                Monthly book discussions, reading circles, and a rotating
+                library of curated titles for members.
+              </p>
+            </div>
+          </div>
+          <div class="pillar">
+            <span class="pillar-icon">🎤</span>
+            <div>
+              <h3>Spoken Word</h3>
+              <p>
+                Open mic nights, slam poetry events, and storytelling sessions
+                that bring the written word to life.
+              </p>
+            </div>
+          </div>
+          <div class="pillar">
+            <span class="pillar-icon">📰</span>
+            <div>
+              <h3>Publication</h3>
+              <p>
+                Annual literary magazine, blog, and digital archive that
+                preserves student voices for posterity.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+     SECTION 3: THOUGHT OF THE DAY / PRESIDENT'S MESSAGE
+     🔧 EDIT: President name, photo, message
+     ============================================================ -->
+    <section id="thought">
+      <div class="thought-wrapper">
+        <div class="section-header reveal">
+          <span class="section-tag">Reflect & Inspire</span>
+          <h2 class="section-title">Thought of the <em>Day</em></h2>
+          <div class="section-rule"></div>
+        </div>
+
+        <div class="reveal">
+          <span class="quote-mark" aria-hidden="true">"</span>
+          <!-- Quote rotates automatically from js/main.js — edit the array there -->
+          <blockquote class="thought-quote" id="daily-quote">
+            "A writer only begins a book. A reader finishes it."
+          </blockquote>
+          <p class="thought-author" id="daily-author">
+            <span>Samuel Johnson</span> — Thought of the Day
+          </p>
+        </div>
+
+        <!-- PRESIDENT'S MESSAGE CARD -->
+        <div class="president-card reveal">
+          <!-- 🔧 EDIT: Replace the initial letter with <img> tag if you have a photo:
+           <img src="assets/images/president.jpg" alt="President Name" />
+      -->
+          <div class="president-avatar" aria-hidden="true">A</div>
+
+          <div class="president-message">
+            <p>"Message by Murli Sir"</p>
+            <!-- 🔧 EDIT: President's name and title -->
+            <div class="president-name">
+              Prof. Dr. Murli Manohar
+              <span>Professor In-Charge, Literary Club</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+     SECTION 4: UPCOMING EVENTS
+     🔧 EDIT: Add/remove event-card blocks to update events
+     ============================================================ -->
+    <section id="events-upcoming">
+      <div class="section-header reveal">
+        <span class="section-tag">LitC Calendar</span>
+        <h2 class="section-title">Upcoming <em>Events</em></h2>
+        <div class="section-rule"></div>
+        <p class="section-subtitle">
+          Join us — every event is an open invitation to discover something new.
+        </p>
+      </div>
+
+      <div class="events-grid">
+        <!-- EVENT CARD 1 -->
+        <!-- 🔧 EDIT: Change day, month, type, title, description, time, location -->
+        <article class="event-card reveal">
+          <div class="event-date-badge">
+            <span class="day">14</span>
+            <span class="month">Apr</span>
+          </div>
+          <p class="event-type">Open Mic Night</p>
+          <h3 class="event-title">Voices in the Dark: A Poetry Evening</h3>
+          <p class="event-desc">
+            An intimate evening of spoken word, original poetry, and short prose
+            readings by club members and guest performers.
+          </p>
+          <div class="event-meta">
+            <span>🕖 6:30 PM</span>
+            <span>📍 Auditorium Hall B</span>
+          </div>
+          <!-- 🔧 EDIT: Replace href with your registration link, or remove if not needed -->
+          <a href="#" class="event-register">Register Free →</a>
+        </article>
+
+        <!-- EVENT CARD 2 -->
+        <article class="event-card reveal">
+          <div class="event-date-badge">
+            <span class="day">22</span>
+            <span class="month">Apr</span>
+          </div>
+          <p class="event-type">Workshop</p>
+          <h3 class="event-title">The Art of the Short Story</h3>
+          <p class="event-desc">
+            A hands-on workshop with our faculty advisor exploring character,
+            plot, and the economy of language in flash fiction and short
+            stories.
+          </p>
+          <div class="event-meta">
+            <span>🕚 11:00 AM</span>
+            <span>📍 Seminar Room 3</span>
+          </div>
+          <a href="#" class="event-register">Reserve Seat →</a>
+        </article>
+
+        <!-- EVENT CARD 3 -->
+        <article class="event-card reveal">
+          <div class="event-date-badge">
+            <span class="day">05</span>
+            <span class="month">May</span>
+          </div>
+          <p class="event-type">Literary Festival</p>
+          <h3 class="event-title">Akshar Utsav 2025 — Annual Fest</h3>
+          <p class="event-desc">
+            Our flagship annual literary festival featuring competitions, panel
+            discussions, author talks, and the launch of our new magazine issue.
+          </p>
+          <div class="event-meta">
+            <span>🕙 10:00 AM – 6:00 PM</span>
+            <span>📍 Main Campus</span>
+          </div>
+          <a href="#" class="event-register">Learn More →</a>
+        </article>
+
+        <!-- ✂️ COPY AND PASTE A NEW EVENT CARD HERE TO ADD MORE EVENTS -->
+      </div>
+    </section>
+
+    <!-- ============================================================
+     SECTION 5: FEATURED WRITINGS
+     🔧 EDIT: Change writing titles, excerpts, authors
+     ============================================================ -->
+    <section id="featured">
+      <div class="section-header reveal">
+        <span class="section-tag">From Our Members</span>
+        <h2 class="section-title">Featured <em>Writings</em></h2>
+        <div class="section-rule"></div>
+        <p class="section-subtitle">
+          Handpicked works that moved us, stayed with us, changed us.
+        </p>
+      </div>
+
+      <div class="featured-grid">
+        <!-- LARGE FEATURED CARD (first / main feature) -->
+        <!-- 🔧 EDIT: Change title, excerpt, author initials, name, date -->
+        <article class="writing-card large reveal-left">
+          <p class="writing-category">Short Story · Fiction</p>
+          <h3 class="writing-title">The River That Forgot Its Name</h3>
+          <p class="writing-excerpt">
+            There was once a river in the foothills of a forgotten mountain that
+            flowed without direction. Not because it was lost — rivers cannot be
+            lost — but because the village it once nourished had stopped calling
+            its name. And without a name, without someone to say it aloud at
+            dawn, the river began to lose the thread of itself...
+          </p>
+          <div class="writing-author">
+            <div class="author-dot">PM</div>
+            <div class="author-info">
+              <div class="name">Priya Mishra</div>
+              <div class="date">March 2025</div>
+            </div>
+          </div>
+          <!-- 🔧 EDIT: Link to full story page or PDF -->
+          <a href="#" class="writing-read-btn">Read Full Story</a>
+        </article>
+
+        <!-- SMALL CARD 1 -->
+        <article class="writing-card reveal">
+          <p class="writing-category">Poetry</p>
+          <h3 class="writing-title">Letters Written in Monsoon</h3>
+          <p class="writing-excerpt">
+            The ink bleeds into the paper / like memory into sleep — / each word
+            a door I forgot to close / before the rains came in.
+          </p>
+          <div class="writing-author">
+            <div class="author-dot">RS</div>
+            <div class="author-info">
+              <div class="name">Riya Sharma</div>
+              <div class="date">February 2025</div>
+            </div>
+          </div>
+          <a href="#" class="writing-read-btn">Read Poem</a>
+        </article>
+
+        <!-- SMALL CARD 2 -->
+        <article class="writing-card reveal">
+          <p class="writing-category">Essay · Non-Fiction</p>
+          <h3 class="writing-title">On Growing Up Between Two Languages</h3>
+          <p class="writing-excerpt">
+            I dream in Hindi and argue in English. Between these two tongues
+            lives a self I am still learning to introduce at parties.
+          </p>
+          <div class="writing-author">
+            <div class="author-dot">AK</div>
+            <div class="author-info">
+              <div class="name">Ankit Kumar</div>
+              <div class="date">January 2025</div>
+            </div>
+          </div>
+          <a href="#" class="writing-read-btn">Read Essay</a>
+        </article>
+
+        <!-- SMALL CARD 3 -->
+        <article class="writing-card reveal">
+          <p class="writing-category">Flash Fiction</p>
+          <h3 class="writing-title">Grandmother's Last Chai</h3>
+          <p class="writing-excerpt">
+            She always made it too sweet. We never told her. Now the kettle
+            stays on the shelf like a sealed letter, never sent.
+          </p>
+          <div class="writing-author">
+            <div class="author-dot">NP</div>
+            <div class="author-info">
+              <div class="name">Nidhi Patel</div>
+              <div class="date">March 2025</div>
+            </div>
+          </div>
+          <a href="#" class="writing-read-btn">Read Story</a>
+        </article>
+
+        <!-- SMALL CARD 4 -->
+        <article class="writing-card reveal">
+          <p class="writing-category">Creative Non-Fiction</p>
+          <h3 class="writing-title">The Shelf Where Time Stops</h3>
+          <p class="writing-excerpt">
+            Every bookshop is a portal. You enter looking for one thing and
+            leave carrying the weight of twelve strangers' inner lives.
+          </p>
+          <div class="writing-author">
+            <div class="author-dot">VR</div>
+            <div class="author-info">
+              <div class="name">Vikram Rao</div>
+              <div class="date">April 2025</div>
+            </div>
+          </div>
+          <a href="#" class="writing-read-btn">Read More</a>
+        </article>
+
+        <!-- ✂️ COPY A WRITING-CARD BLOCK TO ADD MORE WRITINGS -->
+      </div>
+    </section>
+
+    <!-- ============================================================
+     SECTION 6: MAGAZINE
+     🔧 EDIT: Issue titles, descriptions, download links
+     ============================================================ -->
+    <section id="magazine">
+      <div class="magazine-inner">
+        <div class="reveal-left">
+          <div
+            class="section-header"
+            style="text-align: left; margin-bottom: 32px"
+          >
+            <span class="section-tag">Our Publication</span>
+            <!-- Your magazine name -->
+            <h2 class="section-title">The <em>XYZ</em><br />Magazine</h2>
+            <div class="section-rule" style="margin-left: 0"></div>
+          </div>
+
+          <!-- Magazine description -->
+          <p class="magazine-text">
+            Published once a year, <em>XYZ</em> is our flagship literary
+            magazine — a curated collection of the finest student writing,
+            photography, and art. Each issue is themed and open for submissions
+            from all students of GEC Palamu.
+          </p>
+
+          <!-- Magazine Issues -->
+          <div class="magazine-issues">
+            <div class="issue-row">
+              <span class="issue-label">Issue VI — "Thresholds"</span>
+              <span class="issue-meta">Spring 2025</span>
+              <!-- PDF link to magazine -->
+              <a href="#" class="issue-download">↓ PDF</a>
+            </div>
+            <div class="issue-row">
+              <span class="issue-label">Issue V — "Inheritance"</span>
+              <span class="issue-meta">Autumn 2024</span>
+              <a href="#" class="issue-download">↓ PDF</a>
+            </div>
+            <div class="issue-row">
+              <span class="issue-label">Issue IV — "Silences"</span>
+              <span class="issue-meta">Spring 2024</span>
+              <a href="#" class="issue-download">↓ PDF</a>
+            </div>
+            <div class="issue-row">
+              <span class="issue-label">Issue III — "Maps"</span>
+              <span class="issue-meta">Autumn 2023</span>
+              <a href="#" class="issue-download">↓ PDF</a>
+            </div>
+          </div>
+
+          <!-- 🔧 EDIT: Submission guidelines link -->
+          <p class="magazine-text">
+            <em>Want your work to be featured?</em>
+          </p>
+          <a href="#submit" class="btn-primary" style="display: inline-flex"
+            >Submit for Next Issue →</a
+          >
+        </div>
+
+        <!-- Decorative magazine covers -->
+        <div class="magazine-covers reveal-right" aria-hidden="true">
+          <!-- <div class="mag-cover">
+            <p class="mag-cover-vol">Vol. IV · 2024</p>
+            <p class="mag-cover-title">Silences</p>
+            <div class="mag-cover-line"></div>
+            <p class="mag-cover-date">Akshar Magazine</p>
+          </div> -->
+          <div class="mag-cover">
+            <p class="mag-cover-vol">Vol. V · 2025</p>
+            <p class="mag-cover-title">Inheritance</p>
+            <div class="mag-cover-line"></div>
+            <p class="mag-cover-date">XYZ Magazine</p>
+          </div>
+          <!-- <div class="mag-cover">
+            <p class="mag-cover-vol">Vol. VI · 2026</p>
+            <p class="mag-cover-title">Thresholds</p>
+            <div class="mag-cover-line"></div>
+            <p class="mag-cover-date">Akshar Magazine</p>
+          </div> -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+     SECTION 7: GALLERY
+     🔧 EDIT: Add real images — replace data-src and gallery-placeholder text
+     ============================================================ -->
+    <section id="gallery">
+      <div class="section-header reveal">
+        <span class="section-tag">Moments in Frame</span>
+        <h2 class="section-title">Our <em>Gallery</em></h2>
+        <div class="section-rule"></div>
+        <p class="section-subtitle">
+          Snapshots from events, workshops, and literary evenings past.
+        </p>
+      </div>
+
+      <div class="gallery-grid">
+        <!--
+      🔧 HOW TO ADD REAL IMAGES:
+      1. Put your images in the assets/images/ folder
+      2. Replace data-src="assets/images/yourfile.jpg" on each item
+      3. Add an <img src="assets/images/yourfile.jpg" alt="..."> inside the item
+      4. Remove the <div class="gallery-placeholder">...</div>
+    -->
+
+        <div class="gallery-item reveal" data-src="assets/images/event1.jpg">
+          <div class="gallery-placeholder">
+            📸 Annual Literary Festival 2024<br /><small
+              >Replace with real photo</small
+            >
+          </div>
+          <div class="gallery-overlay">
+            <p class="gallery-overlay-text">Annual Literary Festival 2024</p>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal" data-src="assets/images/event2.jpg">
+          <div class="gallery-placeholder">
+            📸 Open Mic Night<br /><small>Replace with real photo</small>
+          </div>
+          <div class="gallery-overlay">
+            <p class="gallery-overlay-text">Open Mic Night — March 2025</p>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal" data-src="assets/images/event3.jpg">
+          <div class="gallery-placeholder">
+            📸 Writing Workshop<br /><small>Replace with real photo</small>
+          </div>
+          <div class="gallery-overlay">
+            <p class="gallery-overlay-text">Flash Fiction Workshop</p>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal" data-src="assets/images/event4.jpg">
+          <div class="gallery-placeholder">
+            📸 Book Discussion Circle<br /><small
+              >Replace with real photo</small
+            >
+          </div>
+          <div class="gallery-overlay">
+            <p class="gallery-overlay-text">Book Circle — February 2025</p>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal" data-src="assets/images/event5.jpg">
+          <div class="gallery-placeholder">
+            📸 Magazine Launch<br /><small>Replace with real photo</small>
+          </div>
+          <div class="gallery-overlay">
+            <p class="gallery-overlay-text">Akshar Issue V Launch</p>
+          </div>
+        </div>
+
+        <div class="gallery-item reveal" data-src="assets/images/event6.jpg">
+          <div class="gallery-placeholder">
+            📸 Poetry Slam<br /><small>Replace with real photo</small>
+          </div>
+          <div class="gallery-overlay">
+            <p class="gallery-overlay-text">Poetry Slam Competition</p>
+          </div>
+        </div>
+
+        <!-- ✂️ ADD MORE GALLERY ITEMS HERE -->
+      </div>
+
+      <div class="gallery-see-more reveal">
+        <!-- 🔧 EDIT: Link to your full photo album (Google Photos, Drive, etc.) -->
+        <a
+          href="#"
+          class="btn-primary"
+          style="display: inline-flex; background: var(--ink)"
+        >
+          View Full Album →
+        </a>
+      </div>
+    </section>
+
+    <!-- ============================================================
+     SECTION 8: PAST EVENTS
+     ============================================================ -->
+    <section id="events-past">
+      <div class="section-header reveal">
+        <span class="section-tag">Looking Back</span>
+        <h2 class="section-title">Past <em>Events</em></h2>
+        <div class="section-rule"></div>
+        <p class="section-subtitle">
+          A chronicle of the stories we have shared together.
+        </p>
+      </div>
+
+      <div class="timeline">
+        <!-- TIMELINE ITEM -->
+        <div class="timeline-item reveal">
+          <div class="timeline-dot">Mar<br />2025</div>
+          <div class="timeline-content">
+            <p class="timeline-date">March 15, 2025</p>
+            <h3 class="timeline-title">DeepGanga - A Literary Evening</h3>
+            <p class="timeline-desc">
+              An evening of original Hindi and English poetry by 18 student
+              performers. Over 200 students attended, making it our most
+              attended event to date.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot">Feb<br />2025</div>
+          <div class="timeline-content">
+            <p class="timeline-date">February 8, 2025</p>
+            <h3 class="timeline-title">Kalaakriti - Navratri '25</h3>
+            <p class="timeline-desc">
+              A college-wide flash fiction competition with 75 entries. Winners
+              were published in the Akshar spring issue. Cash prizes and
+              certificates awarded.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot">Nov<br />2025</div>
+          <div class="timeline-content">
+            <p class="timeline-date">November 11-13, 2025</p>
+            <h3 class="timeline-title">Rajatotsav</h3>
+            <p class="timeline-desc">
+              A cultural celebration of the tribal heritage of Jharkhand on its
+              Silver Jubilee.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot">May<br />2025</div>
+          <div class="timeline-content">
+            <p class="timeline-date">May 22, 2025</p>
+            <h3 class="timeline-title">Biodiversity Day</h3>
+            <p class="timeline-desc">
+              A cultural celebration of the tribal heritage of Jharkhand on its
+              Silver Jubilee.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot">Dec<br />2024</div>
+          <div class="timeline-content">
+            <p class="timeline-date">December 19, 2024</p>
+            <h3 class="timeline-title">
+              Saanjh - Annual Literary Festival
+            </h3>
+            <p class="timeline-desc">
+              Our flagship festival featuring a debate, essay contest,
+              slam poetry, a storytelling marathon.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-dot">Feb<br />2024</div>
+          <div class="timeline-content">
+            <p class="timeline-date">February 21, 2025</p>
+            <h3 class="timeline-title">Matribhaasha Divas</h3>
+            <p class="timeline-desc">
+              Official launch of our fifth annual magazine, featuring 32 works
+              by 28 student contributors. Launched by Principal Dr. A.K. Sharma.
+            </p>
+          </div>
+        </div>
+
+
+        <!-- ✂️ COPY A TIMELINE-ITEM BLOCK TO ADD MORE PAST EVENTS -->
+      </div>
+    </section>
+
+    <!-- ============================================================
+     SECTION 9: SUBMIT YOUR WORK
+     ============================================================ -->
+    <section id="submit">
+      <div class="submit-inner">
+        <div class="submit-icon" aria-hidden="true">✉️</div>
+
+        <div class="section-header" style="margin-bottom: 28px">
+          <span class="section-tag">We Want to Hear From You</span>
+          <h2 class="section-title">Send Us Your Work</h2>
+        </div>
+
+        <p class="submit-text">
+          Have a poem, story, essay, or piece of art you want to share with the
+          world? We accept submissions year-round for our magazine, blog, and
+          events. All genres and forms welcome — we read everything.
+        </p>
+
+        <!-- Subject line input + mailto button -->
+        <div class="submit-email-box">
+          <input
+            type="text"
+            id="submit-subject"
+            class="submit-email-input"
+            placeholder="Subject (e.g. 'Short Story Submission — Title')"
+            aria-label="Email subject"
+          />
+          <button
+            id="submit-send-btn"
+            class="submit-btn"
+            data-email="literaryclub@abc.edu"
+            aria-label="Open email"
+          >
+            Open Mail App
+          </button>
+        </div>
+
+        <p class="submit-formats">
+          Accepted formats: .doc, .docx, .pdf, .txt · Max 3000 words for prose ·
+          All poetry forms welcome
+        </p>
+
+        <p class="submit-or">or</p>
+
+        <p class="submit-direct">
+          Email us directly at
+          <a href="mailto:literaryclub@abc.edu">literaryclub@abc.edu</a>
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================================================
+     FOOTER
+     🔧 EDIT: Club name, tagline, social links, quick links
+     ============================================================ -->
+    <footer>
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <!-- 🔧 EDIT: Club name -->
+          <span class="nav-logo">
+            <span class="nav-logo-icon" aria-hidden="true">
+              <svg
+                width="26"
+                height="26"
+                viewBox="0 0 32 32"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <rect
+                  x="5"
+                  y="4"
+                  width="10"
+                  height="24"
+                  rx="1.5"
+                  fill="#c9943a"
+                  opacity="0.85"
+                />
+                <rect
+                  x="17"
+                  y="4"
+                  width="10"
+                  height="24"
+                  rx="1.5"
+                  fill="#c9943a"
+                  opacity="0.55"
+                />
+                <rect
+                  x="14.5"
+                  y="4"
+                  width="3"
+                  height="24"
+                  rx="1"
+                  fill="#7a1522"
+                />
+                <line
+                  x1="7.5"
+                  y1="10"
+                  x2="13"
+                  y2="10"
+                  stroke="white"
+                  stroke-width="1"
+                  stroke-opacity="0.5"
+                />
+                <line
+                  x1="7.5"
+                  y1="13"
+                  x2="13"
+                  y2="13"
+                  stroke="white"
+                  stroke-width="1"
+                  stroke-opacity="0.5"
+                />
+                <line
+                  x1="7.5"
+                  y1="16"
+                  x2="13"
+                  y2="16"
+                  stroke="white"
+                  stroke-width="1"
+                  stroke-opacity="0.5"
+                />
+              </svg>
+            </span>
+            <span class="nav-logo-text">LitC, GECP</span>
+          </span>
+          <p>
+            The Literary Club of GECP. Celebrating the written word since 2023.
+            We read, write, and make each other feel less alone.
+          </p>
+          <div class="footer-social">
+            <a href="#" class="social-link" aria-label="Instagram"></a>
+            <a href="#" class="social-link" aria-label="Email">✉️</a>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <h4>Navigate</h4>
+          <ul>
+            <li><a href="#purpose">About the Club</a></li>
+            <li><a href="#events-upcoming">Upcoming Events</a></li>
+            <li><a href="#featured">Featured Writings</a></li>
+            <li><a href="#magazine">Magazine</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#events-past">Archive</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Get Involved</h4>
+          <ul>
+            <li><a href="#submit">Submit Your Work</a></li>
+            <li><a href="#">Join the Club</a></li>
+            <li><a href="mailto:literaryclub@abc.edu">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          © 2025 Literary Club, GECP. Made with <span>♥</span> by
+          nirmanshandilya.
+        </p>
+        <p>All creative works belong to their respective authors.</p>
+      </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
