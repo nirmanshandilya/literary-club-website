@@ -166,8 +166,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   /* ----------------------------------------------------------
-     8. THOUGHT OF THE DAY — rotates quotes automatically
-     Add more quotes to the array below to expand the pool.
+     8. THOUGHT OF THE DAY 
   ---------------------------------------------------------- */
   const quotes = [
     {
@@ -197,7 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   ];
 
-  // Pick a random quote each day (changes daily)
+  // random quote each day
   const dayIndex    = Math.floor(Date.now() / 86400000) % quotes.length;
   const todayQuote  = quotes[dayIndex];
   const quoteEl     = document.getElementById('daily-quote');
